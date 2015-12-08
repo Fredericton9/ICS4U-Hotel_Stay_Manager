@@ -6,3 +6,5 @@ Michael Ding, Austin Lee, Jeehwan Lee, Brandon Leung.
 
 This is a program, designed for hotels. This allows hotel adminstrators to input the details of their hotel, and allow for automatic check-in and check-outs of customers through customer input. It will also alter stays by extending/shortening their stay here.
 
+Due: December 20th, 2015
+
