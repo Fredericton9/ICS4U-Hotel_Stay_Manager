@@ -19,3 +19,7 @@ There should be 3 functions, not including the main;
 *Note in all functions, the customer will need to input a 4-digit passcode generated already for each customer.*
 
 In the main loop;
+
+- For each customer checking in, the class is called;
+
+- The main function will have a time counter; Seeing if the customer have stayed for time they requested
