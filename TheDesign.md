@@ -22,4 +22,4 @@ In the main loop;
 
 - For each customer checking in, the class is called;
 
-- The main function will have a time counter; Seeing if the customer have stayed for time they requested
+- The main function will have a time counter; Seeing if the customer have stayed for time they requested.
