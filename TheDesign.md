@@ -20,6 +20,6 @@ There should be 3 functions, not including the main;
 
 In the main loop;
 
-- For each customer checking in, the class is called;
+- For each customer checking in, the class floor is called and puts the customer in the room available on the particular floor;
 
-- The main function will have a time counter; Seeing if the customer have stayed for time they requested.
+- The main function will have a time counter; Every tick for the time counter is equivalent every day and sees if the customer have stayed for time they requested for.
