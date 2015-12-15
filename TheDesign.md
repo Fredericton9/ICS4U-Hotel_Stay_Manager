@@ -1,5 +1,5 @@
 The class floors are made.
-Under each class, there are two or more objects: each corresponding to a different type of rooms in the hotel. There will be values according to each variable for the room, such as a string
+Under each class, there are two or more objects: each corresponding to a different type of room in the hotel. There will be values according to each variable for the room, such as a string
 array for the occupants in the room, type of room it would be, cost per night, and the duration of their stay.
 
 - There should be two/three different type of rooms (it could from ocean-view/non-scenic or Luxury/First Class/Economic)
