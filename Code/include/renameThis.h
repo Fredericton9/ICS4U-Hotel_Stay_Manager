@@ -1,14 +1,13 @@
-#ifndef AUSTIN EXP1_H
-#define AUSTIN EXP1_H
+#ifndef RENAMETHIS_H
+#define RENAMETHIS_H
 
 
-class austin exp1
+class renameThis
 {
     public:
-        austin exp1();
-        virtual ~austin exp1();
+        renameThis();
     protected:
     private:
 };
 
-#endif // AUSTIN EXP1_H
+#endif // RENAMETHIS_H
