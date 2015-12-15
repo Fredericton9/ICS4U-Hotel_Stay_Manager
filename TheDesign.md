@@ -1,13 +1,13 @@
-The class floor is made.
-Under the class, there are two or more objects: each corresponding to different types of rooms in the hotel. There will be values according to each value of the room, such as a string
-array for the occupants of the room, What type of room it would be, how much it would cost per night, and the duration of their stay in that room.
+The class floors are made.
+Under each class, there are two or more objects: each corresponding to a different type of rooms in the hotel. There will be values according to each variable for the room, such as a string
+array for the occupants in the room, type of room it would be, cost per night, and the duration of their stay.
 
-- Note that there should be two/three variants of rooms (it could from ocean-view/non-scenic or Luxury/First Class/Economic)
-- If there are no rooms left in a certain floor, they should be moved to the next floor, and continuously moved until there is a room available.
+- There should be two/three different type of rooms (it could from ocean-view/non-scenic or Luxury/First Class/Economic)
+- If there are no rooms left on a certain floor, they will be moved to the next floor and so on until there is a room available
 
 
 
-There should be 3 functions, not including the main;
+There will be 3 functions, excluding the main;
 
 - Addition of Time Stayed; Allows the occupant to input how much extra time they would like to stay, calculate and output the additional cost, and
 			   add it to their current cost total.
@@ -22,4 +22,4 @@ In the main loop;
 
 - For each customer checking in, the class floor is called and puts the customer in the room available on the particular floor;
 
-- The main function will have a time counter; Every tick for the time counter is equivalent every day and sees if the customer have stayed for time they requested for.
+- The main function will have a time counter; Every tick for the time counter is equivalent to each day and sees if the customer has stayed for time that they've booked for.
