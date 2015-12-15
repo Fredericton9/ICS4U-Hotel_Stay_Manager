@@ -1,11 +1,11 @@
-#include "austin exp1.h"
+#include "renameThis.h"
 
-austin exp1::austin exp1()
+austin exp1::renameThis()
 {
     //ctor
 }
 
-austin exp1::~austin exp1()
+austin exp1::~renameThis()
 {
     //dtor
 }
