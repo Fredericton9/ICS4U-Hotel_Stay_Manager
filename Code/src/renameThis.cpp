@@ -1,11 +1,11 @@
-#include "renameThis.h"
+#include "floor.h"
 
-austin exp1::renameThis()
+austin exp1::floor()
 {
     //ctor
 }
 
-austin exp1::~renameThis()
+austin exp1::~floor()
 {
     //dtor
 }
