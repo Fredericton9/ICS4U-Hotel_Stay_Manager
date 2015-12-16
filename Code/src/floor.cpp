@@ -7,5 +7,4 @@ floor::floor(int floorNum, int roomTypeNum[][2]){
 }
 
 int addCustomer(string roomType){
-    int roomType[][2] = roomTypeNum;
 }
