@@ -1,11 +1,11 @@
 #include "room.h"
 
-austin room::room()
+room::room()
 {
     //ctor
 }
 
-austin room::~room()
+room::~room()
 {
     //dtor
 }
