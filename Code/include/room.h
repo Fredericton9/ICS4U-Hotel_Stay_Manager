@@ -6,8 +6,6 @@ class room
 {
     public:
         room();
-    protected:
-    private:
 };
 
 #endif // ROOM_H
