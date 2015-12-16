@@ -1,11 +1,11 @@
 #include "floor.h"
 
-austin exp1::floor()
+austin floor::floor()
 {
     //ctor
 }
 
-austin exp1::~floor()
+austin floor::~floor()
 {
     //dtor
 }
