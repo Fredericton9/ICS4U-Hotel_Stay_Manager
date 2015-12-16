@@ -4,9 +4,7 @@
 class floor
 {
     public:
-        floor();
-    protected:
-    private:
+        floor(int floorNum, int roomTypeNum[]);
 };
 
 #endif // FLOOR_H
