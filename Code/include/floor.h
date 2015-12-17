@@ -7,6 +7,7 @@ class floor
     public:
         floor(int floorNum, int roomTypeNum[]);
         bool roomAvailable(string roomType);
-};
+        void checkIn();
+        void checkOut();
 
 #endif // FLOOR_H
