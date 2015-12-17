@@ -6,7 +6,7 @@ class floor
 {
     public:
         floor(int floorNum, int roomTypeNum[]);
-        int addCustomer(string roomType);
+        bool addCustomer(string roomType);
 };
 
 #endif // FLOOR_H
