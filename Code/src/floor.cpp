@@ -16,3 +16,11 @@ bool floor::roomAvailable(string roomType){
         }
     }
 }
+
+void floor::checkIn(){
+    
+}
+
+void floor::checkOut(){
+    
+}
