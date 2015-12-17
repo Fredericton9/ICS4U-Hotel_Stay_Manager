@@ -7,7 +7,7 @@ floor::floor(int floorNum, int roomTypeNum[]){
     int roomTypeNum[4] = roomTypeNum;
 }
 
-bool floor::addCustomer(string roomType){
+bool floor::roomAvailable(string roomType){
     for(int x = 0; x < 3; x++){
         if(roomType == roomTypes[x] and roomTypeNum[x] != 0){
             return true
