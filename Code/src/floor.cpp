@@ -18,8 +18,8 @@ bool floor::roomAvailable(string roomType, int pinCode){
     }
 }
 
-void floor::checkIn(){
-    
+void floor::checkIn(int days){
+    int days = days
 }
 
 void floor::checkOut(){
