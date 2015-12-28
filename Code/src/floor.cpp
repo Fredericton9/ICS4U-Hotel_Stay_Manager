@@ -4,7 +4,7 @@
 floor::floor(int floorNum, int roomTypeNum[]){
     int floorNum = floorNum;
     int roomTypeNum[4] = roomTypeNum;
-    int hours[4][]
+    int hours[][4] = {};
 }
 
 bool floor::roomAvailable(int roomTypeCode, int pinCode){
