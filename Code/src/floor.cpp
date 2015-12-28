@@ -4,22 +4,14 @@
 floor::floor(int floorNum, int roomTypeNum[]){
     int floorNum = floorNum;
     int roomTypeNum[4] = roomTypeNum;
-    int hours[][4] = {};
 }
 
-bool floor::roomAvailable(int roomTypeCode, int pinCode){
-    if(roomType == roomTypes[x] and roomTypeNum[roomTypeCode] != 0){
-        int pinCode = pinCode;
-        return true;
-    }else{
-        return false;
+void floor::checkIn(int roomTypeCode){
+    if(roomTypeNum[roomTypeCode] != 0){
+        roomTypeNum[roomTypeCode] -= 1;
     }
 }
 
-void floor::checkIn(){
-    
-}
-
-void floor::checkOut(){
-    
+void floor::checkOut(int roomTypeCode){
+    roomTypeNum[roomTypeCode] += 1;
 }
