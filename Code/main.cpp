@@ -3,9 +3,9 @@
 
 int roomTypeToInt(string roomType){
     string roomTypes[4] = {'ocean view double','ocean view single','regular double','regular single'};
-    for(int x = 0; x < 3; x++){
+    for(int code = 0; code < 3; code++){
         if(roomType == roomTypes[x]){
-            return x;
+            return code;
         }
     }
 }
