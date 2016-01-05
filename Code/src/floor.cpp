@@ -1,9 +1,11 @@
 #include <string>
 #include "floor.h"
 
-floor::floor(int floorNum, int roomTypeNum[]){
+floor::floor(int floorNum, int totalRooms, int splRooms){
     int floorNum = floorNum;
-    int roomTypeNum[4] = roomTypeNum;
+    int totalRooms = totalRooms;
+    int splRooms = splRooms;
+    int regRooms = totalRooms - splRooms;
 }
 
 void floor::checkIn(int roomTypeCode){
