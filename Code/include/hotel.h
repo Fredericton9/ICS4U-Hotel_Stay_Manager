@@ -6,6 +6,6 @@ class hotel
 {
     public:
         hotel();
-        void chgSetting(int floor, int int totalRooms, int splRooms);
+        void chgSetting(int floor, int totalRooms, int splRooms);
 
 #endif // HOTEL_H
