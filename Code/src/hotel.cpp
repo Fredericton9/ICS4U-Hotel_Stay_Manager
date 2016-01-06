@@ -2,8 +2,8 @@
 #include "hotel.h"
 
 hotel::hotel(){
-    int floorNum;
-    int totalRooms;
-    int splRooms;
-    int regRooms;
+        int floorNum;
+        int totalRooms;
+        int splRooms;
+        int regRooms;
 }
