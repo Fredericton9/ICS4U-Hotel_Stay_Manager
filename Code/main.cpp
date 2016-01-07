@@ -2,7 +2,7 @@
 #include <string>
 
 int roomTypeToInt(string roomType){
-    string roomTypes[4] = {'special','regular'};
+    string roomTypes[4] = {'regular','special'};
     for(int code = 0; code < 2; code++){
         if(roomType == roomTypes[x]){
             return code;
