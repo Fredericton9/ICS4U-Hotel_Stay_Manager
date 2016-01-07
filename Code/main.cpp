@@ -2,8 +2,8 @@
 #include <string>
 
 int roomTypeToInt(string roomType){
-    string roomTypes[4] = {'ocean view double','ocean view single','regular double','regular single'};
-    for(int code = 0; code < 3; code++){
+    string roomTypes[4] = {'special','regular'};
+    for(int code = 0; code < 2; code++){
         if(roomType == roomTypes[x]){
             return code;
         }
