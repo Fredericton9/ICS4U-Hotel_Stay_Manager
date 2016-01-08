@@ -5,5 +5,6 @@ class menu
 {
     public:
         menu();
+        void display();
 
 #endif // MENU_H
