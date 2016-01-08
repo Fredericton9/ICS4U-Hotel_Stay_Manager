@@ -9,15 +9,16 @@ hotel::hotel(){
     string answer;
 }
 
-void hotel::chgSetting(int numFloor, int regRooms, int splRooms){
+void hotel::chgSetting(int numFloor, int regRooms){
     if(IsEmpty){
-        int floor[2] = {regRooms, splRooms}
-        int hotel[numFloor][2];
-        for(int i = 0; i < numFloor; i++) {
-            hotel[i][0] = regRooms;
-            hotel[i][1] = splRooms;
+        int hotel[numFloor][2][regRooms];
+        for(int floor = 0; floor < numFloor; floor++){
+            for(int num = 0; num < 2; num++){
+                for(int rooms = 0; rooms < regRooms; rooms++){
+                    int hotel[floor][num][rooms] = 0;
+                }
+            }
         }
-        int totalRooms = (regRooms + splRooms) * numFloor;
     }else{
         cout << "There are customers still staying at the hotel. are you sure you want to edit? (y/n) ";
         cin >> answer;
@@ -28,19 +29,17 @@ void hotel::chgSetting(int numFloor, int regRooms, int splRooms){
     }
 }
 
-void floor::checkIn(int roomTypeCode, int floorNum){
-    if(roomTypeNum[floorNum][roomTypeCode] != 0){
-        cout << "Thank you for the reservation." << endl;
-        roomTypeNum[floorNum][roomTypeCode] -= 1;
-    }else{
-        cout << "There are no room of your preference on this floor. Please choose another floor (1 - " << numFloor << ") or 0 to cancel: ";
-        cin >> floorNum;
-        if(floorNum != 0){
-            checkIn(roomTypeCode, floorNum)
+int floor::checkIn(int roomTypeCode, int floorNum, int timeStay){
+    for(int i = 0; i < regRooms; i++){
+        if(int hotel[floorNum][roomTypeCode][i] == 0){
+            cout << "Thank you for the reservation." << endl;
+            hotel[floorNum][roomTypeCode][i] = timeStay
+            return 1;
         }
     }
-}
-
-void floor::checkOut(int roomTypeCode){
-    roomTypeNum[roomTypeCode] += 1;
+    cout << "There are no room of your preference on this floor. Please choose another floor (1 - " << numFloor << ") or 0 to cancel: ";
+    cin >> floorNum;
+    if(floorNum != 0){
+        checkIn(roomTypeCode, floorNum)
+    }
 }
