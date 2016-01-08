@@ -29,7 +29,7 @@ void hotel::chgSetting(int numFloor, int regRooms){
     }
 }
 
-void timeTick(){
+void hotel::timeTick(){
     for(int i = 0; i < regRooms; i++){
         if(int hotel[floorNum][roomTypeCode][i] != 0){
             hotel[floorNum][roomTypeCode][i] -= 0
