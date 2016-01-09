@@ -85,7 +85,7 @@ void hotel::changeRoom(int floorNum1, int roomTypeCode1, int num1, int floorNum2
     }
 }
 
-void changeTime(int floorNum, int roomTypeCode, int num, int addTimeStay){
+void hotel::changeTime(int floorNum, int roomTypeCode, int num, int addTimeStay){
     if(hotel[floorNum1][roomTypeCode1][num1] != 0){
         cout << "Are you sure you want to stay longer? (y/n) ";
         cin >> answer;
@@ -98,7 +98,7 @@ void changeTime(int floorNum, int roomTypeCode, int num, int addTimeStay){
     }
 }
 
-void checkOut(int floorNum, int roomTypeCode, int num){
+void hotel::checkOut(int floorNum, int roomTypeCode, int num){
     if(hotel[floorNum1][roomTypeCode1][num1] != 0){
         cout << "Are you sure you want to check out now? (y/n) ";
         cin >> answer;
