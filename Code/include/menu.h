@@ -8,7 +8,7 @@ class menu
         int display();
         int checkIn(int numFloor);
         int enterCode();
-        int editDisplay()
+        int editDisplay();
 };
 
 #endif // MENU_H
