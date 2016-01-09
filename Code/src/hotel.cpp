@@ -20,7 +20,7 @@ void hotel::chgSetting(int numFloor, int regRooms){
             }
         }
     }else{
-        cout << "There are customers still staying at the hotel. are you sure you want to edit? (y/n) ";
+        cout << "There are customers still staying at the hotel. Are you sure you want to edit? (y/n) ";
         cin >> answer;
         if(answer == 'y'){
             IsEmpty = true;
@@ -38,12 +38,12 @@ void hotel::timeTick(){
 }
 
 //Customer Setting------------------------------------------------------------------------------------------
-int floor::checkIn(int roomTypeCode, int floorNum, int timeStay){
+void floor::checkIn(int roomTypeCode, int floorNum, int timeStay){
     bool isAvailable = false;
-    for(int i = 0; i < regRooms; i++){
-        if(int hotel[floorNum][roomTypeCode][i] == 0){
-            cout << "Thank you for the reservation. Your code is " << floorNum << ", " << roomTypeCode << ", and " << i << endl;
-            hotel[floorNum][roomTypeCode][i] = timeStay;
+    for(int num = 0; nim < regRooms; num++){
+        if(hotel[floorNum][roomTypeCode][num] == 0){
+            cout << "Thank you for the reservation. Your code is " << floorNum << ", " << roomTypeCode << ", and " << num << endl;
+            hotel[floorNum][roomTypeCode][num] = timeStay;
             isAvailable = true
         }
     }
@@ -56,4 +56,29 @@ int floor::checkIn(int roomTypeCode, int floorNum, int timeStay){
     }
 }
 
-int
+void hotel::changeRoom(int floorNum1, int roomTypeCode1, int num1, int floorNum2, int roomTypeCode2, int num2){
+    if(hotel[floorNum1][roomTypeCode1][num1] != 0){
+        cout << "Are you sure you want to edit? (y/n) ";
+        cin >> answer;
+        if(answer == 'y'){
+            cout << "Your new code is " << floorNum2 << ", " << roomTypeCode2 << ", and " << num2 << endl;
+            hotel[floorNum2][roomTypeCode2][num2] = hotel[floorNum1][roomTypeCode1][num1];
+            hotel[floorNum1][roomTypeCode1][num1] = 0;
+        }
+    }else{
+        cout << "The code you entered is invaild. Your transaction is cancelled" << endl;
+    }
+}
+
+void changeTime(int floorNum, int roomTypeCode, int num, int addTimeStay){
+    if(hotel[floorNum1][roomTypeCode1][num1] != 0){
+        cout << "Are you sure you want to edit? (y/n) ";
+        cin >> answer;
+        if(answer == 'y'){
+            hotel[floorNum][roomTypeCode][num] += addTimeStay;
+            cout << "Your new reservation time is" << hotel[floorNum][roomTypeCode][num] << endl;
+        }
+    }else{
+        cout << "The code you entered is invaild. Your transaction is cancelled" << endl;
+    }
+}
