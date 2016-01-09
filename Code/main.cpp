@@ -1,4 +1,5 @@
-#include "renameThis.h"
+#include "hotel.h"
+#include "menu.h"
 #include <string>
 
 int roomTypeToInt(string roomType){
