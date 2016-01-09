@@ -41,7 +41,7 @@ void hotel::timeTick(){
 //Customer Setting------------------------------------------------------------------------------------------
 void hotel::checkIn(int roomTypeCode, int floorNum, int timeStay){
     int startNum = 0;
-    if(roomTypeCode == 1)
+    if(roomTypeCode == 2)
         startNum = roomTypeNum;
     int isAvailable = false;
     for(int num = startNum; num < (roomTypeNum + startNum); num++){
