@@ -10,7 +10,6 @@ hotel::hotel(){
 
 //Admin Setting---------------------------------------------------------------------------------------------
 void hotel::chgSetting(int numFloor, int totalRooms){
-    numFloor = numFloor;
     hotelLayout = new int*[numFloor];
     for (int i = 0; i < numFloor; i++)
         hotelLayout[i] = new int[totalRooms];
@@ -18,33 +17,34 @@ void hotel::chgSetting(int numFloor, int totalRooms){
     for(int floor = 0; floor < numFloor; floor++){
         for(int room = 0; room < totalRooms; room++){
             hotelLayout[floor][room] = 0;
-            rooms = totalRooms/2;
+            roomTypeNum = totalRooms/2;
         }
     }
+    numFloorGb = numFloor;
 }
 
 // Edit
 void hotel::timeTick(){
-    for(int floor = 0; floor < numFloor; floor++){
-        for(int room = 0; room < rooms; room++){
+    for(int floor = 0; floor < numFloorGb; floor++){
+        for(int room = 0; room < (roomTypeNum*2); room++){;
             if(hotelLayout[floor][room] != 0){
                 hotelLayout[floor][room] -= 1;
                 if(hotelLayout[floor][room] == 0){
-                    cout << "Thank you for your stay at our hotel." << endl;
-                    Sleep(2000);
+                    cout << "Thank you for your stay at our hotel " << floor + 1 << room << "." << endl;
+                    Sleep(1000);
                 }
             }
         }
-    }checkInNum = 0;
+    }
 }
 
 //Customer Setting------------------------------------------------------------------------------------------
 void hotel::checkIn(int roomTypeCode, int floorNum, int timeStay){
     int startNum = 0;
     if(roomTypeCode == 1)
-        startNum = rooms;
+        startNum = roomTypeNum;
     int isAvailable = false;
-    for(int num = startNum; num < (rooms + startNum); num++){
+    for(int num = startNum; num < (roomTypeNum + startNum); num++){
         if(hotelLayout[floorNum - 1][num] == 0){
             cout << "Thank you for the reservation. Your code is " << floorNum << " and " << num << endl;
             hotelLayout[floorNum - 1][num] = timeStay;
