@@ -5,7 +5,7 @@ class hotel
 {
     public:
         hotel();
-        void chgSetting(int floorNum, int totalRooms, int splRooms);
+        void chgSetting(int numFloor, int regRooms);
         void timeTick();
         void checkIn(int roomTypeCode, int floorNum, int timeStay);
         void changeRoom(int floorNum1, int roomTypeCode1, int num1, int floorNum2, int roomTypeCode2, int num2);
