@@ -3,23 +3,22 @@
 #include "menu.h"
 using namespace std;
 
-menu::menu(string password){
-    int info[3];
-    string password = password;
+menu::menu(){
 }
 
 int menu::display(){
-    int answer = -1;
+    answer = -1;
     cout << "-------MENU-------" << endl;
     cout << "1. Hotel Setting" << endl;
     cout << "2. Check-in" << endl;
     cout << "3. Edit Your Stay" << endl;
     cout << "------------------" << endl;
     cin >> answer;
-    return answer
+    return answer;
 }
 
-int menu::checkIn(int numFloor){
+int* menu::checkIn(int numFloor){
+    int info[3];
     cout << "Which floor would you like to stay? (1 - " << numFloor << ") ";
     cin >> answer;
     info[0] = answer;
@@ -29,20 +28,18 @@ int menu::checkIn(int numFloor){
     cout << "How long do you plan to stay here? ";
     cin >> answer;
     info[2] = answer;
-    return info[3];
+    return info;
 }
 
-int menu::enterCode(){
+int* menu::enterCode(){
+    int code[2];
     cout << "Floor Number: ";
     cin >> answer;
-    info[0] = answer;
-    cout << "Room Type Number (1. Special Room, 2. Regular Room): ";
-    cin >> answer;
-    info[1] = answer;
+    code[0] = answer;
     cout << "Room Number: " << endl;
     cin >> answer;
-    info[2] = answer;
-    return info[3];
+    code[1] = answer;
+    return code;
 }
 
 int menu::editDisplay(){
@@ -52,5 +49,5 @@ int menu::editDisplay(){
     cout << "2. Change Time" << endl;
     cout << "3. Check Out" << endl;
     cin >> answer;
-    return answer
+    return answer;
 }
