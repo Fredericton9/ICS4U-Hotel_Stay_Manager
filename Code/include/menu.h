@@ -5,6 +5,8 @@ class menu
 {
     public:
         menu();
-        void display();
+        int display();
+        int checkIn(int numFloor);
+        int enterCode();
 
 #endif // MENU_H
