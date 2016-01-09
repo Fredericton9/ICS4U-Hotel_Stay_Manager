@@ -54,7 +54,7 @@ void timeTick(){
 }
 
 //Customer Setting------------------------------------------------------------------------------------------
-void floor::checkIn(int roomTypeCode, int floorNum, int timeStay){
+void hotel::checkIn(int roomTypeCode, int floorNum, int timeStay){
     if(checkInNum < 4){
         bool isAvailable = false;
         for(int num = 0; nim < regRooms; num++){
