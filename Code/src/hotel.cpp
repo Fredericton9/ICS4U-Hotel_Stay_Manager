@@ -5,6 +5,7 @@
 using namespace std;
 
 hotel::hotel(){
+    int checkInNum = 0;
     int hotel[2][2][2] = {0,0,0,0,0,0};
     string answer;
 }
@@ -40,13 +41,13 @@ void hotel::chgSetting(int numFloor, int regRooms){
     }
 }
 
-void hotel::timeTick(){
+void timeTick(){
     for(int num = 0; num < regRooms; num++){
         if(int hotel[floorNum][roomTypeCode][num] != 0){
-            hotel[floorNum][roomTypeCode][num] -= 0
+            hotel[floorNum][roomTypeCode][num] -= 1;
             if(hotel[floorNum][roomTypeCode][num] == 0){
                 cout << "Thank you for your stay at our hotel." << endl;
-                Sleep(1000)
+                Sleep(2000);
             }
         }
     }
@@ -54,20 +55,26 @@ void hotel::timeTick(){
 
 //Customer Setting------------------------------------------------------------------------------------------
 void floor::checkIn(int roomTypeCode, int floorNum, int timeStay){
-    bool isAvailable = false;
-    for(int num = 0; nim < regRooms; num++){
-        if(hotel[floorNum][roomTypeCode][num] == 0){
-            cout << "Thank you for the reservation. Your code is " << floorNum << ", " << roomTypeCode << ", and " << num << endl;
-            hotel[floorNum][roomTypeCode][num] = timeStay;
-            isAvailable = true
+    if(checkInNum < 4){
+        bool isAvailable = false;
+        for(int num = 0; nim < regRooms; num++){
+            if(hotel[floorNum][roomTypeCode][num] == 0){
+                cout << "Thank you for the reservation. Your code is " << floorNum << ", " << roomTypeCode << ", and " << num << endl;
+                hotel[floorNum][roomTypeCode][num] = timeStay;
+                isAvailable = true;
+            }
         }
-    }
-    if(isAvailable = false){
-        cout << "There are no room of your preference on this floor. Please choose another floor (1 - " << numFloor << ") or 0 to cancel: ";
-        cin >> floorNum;
-        if(floorNum != 0){
-            checkIn(roomTypeCode, floorNum);
+        if(isAvailable = false){
+            cout << "There are no room of your preference on this floor. Please choose another floor (1 - " << numFloor << ") or 0 to cancel: ";
+            cin >> floorNum;
+            if(floorNum != 0){
+                checkIn(roomTypeCode, floorNum);
+            }
         }
+        checkInNum += 1
+    }else{
+        cout << "The day is over. No more check in for the day.\n" << endl;
+        timeTick();
     }
 }
 
