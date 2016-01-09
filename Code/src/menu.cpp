@@ -4,6 +4,7 @@
 using namespace std;
 
 menu::menu(string password){
+    int info[3];
     string password = password;
 }
 
@@ -18,17 +19,29 @@ int menu::display(){
     return answer
 }
 
-int menu::checkInDisplay(int numFloor){
-    int info[3];
-    cout << "Which floor would you like to stay? (1 - " << numFloor << ") " << endl;
+int menu::checkIn(int numFloor){
+    cout << "Which floor would you like to stay? (1 - " << numFloor << ") ";
     cin >> answer;
     info[0] = answer;
-    cout << "Which room would you like to stay?" << endl;
-    cout << "1. Special Room" << endl;
-    cout << "2. Regular Room" << endl;
+    cout << "Which room would you like to stay (1. Special Room, 2. Regular Room)? ";
     cin >> answer;
     info[1] = answer;
-    cout << "How long do you plan to stay here? " << endl;
+    cout << "How long do you plan to stay here? ";
     cin >> answer;
     info[2] = answer;
+    return info[3];
+}
+
+int menu::enterCode(){
+    cout << "Please enter your code below:" << endl;
+    cout << "Floor Number: ";
+    cin >> answer;
+    info[0] = answer;
+    cout << "Room Type Number (1. Special Room, 2. Regular Room): ";
+    cin >> answer;
+    info[1] = answer;
+    cout << "Room Number: " << endl;
+    cin >> answer;
+    info[2] = answer;
+    return info[3];
 }
