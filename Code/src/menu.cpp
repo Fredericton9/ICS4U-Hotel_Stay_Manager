@@ -33,7 +33,6 @@ int menu::checkIn(int numFloor){
 }
 
 int menu::enterCode(){
-    cout << "Please enter your code below:" << endl;
     cout << "Floor Number: ";
     cin >> answer;
     info[0] = answer;
@@ -44,4 +43,14 @@ int menu::enterCode(){
     cin >> answer;
     info[2] = answer;
     return info[3];
+}
+
+int menu::editDisplay(){
+    int answer = -1;
+    cout << "How do you want to edit your stay" << endl;
+    cout << "1. Change Rooms" << endl;
+    cout << "2. Change Time" << endl;
+    cout << "3. Check Out" << endl;
+    cin >> answer;
+    return answer
 }
