@@ -39,16 +39,21 @@ void hotel::timeTick(){
 
 //Customer Setting------------------------------------------------------------------------------------------
 int floor::checkIn(int roomTypeCode, int floorNum, int timeStay){
+    bool isAvailable = false;
     for(int i = 0; i < regRooms; i++){
         if(int hotel[floorNum][roomTypeCode][i] == 0){
             cout << "Thank you for the reservation. Your code is " << floorNum << ", " << roomTypeCode << ", and " << i << endl;
             hotel[floorNum][roomTypeCode][i] = timeStay;
-            return 1;
+            isAvailable = true
         }
     }
-    cout << "There are no room of your preference on this floor. Please choose another floor (1 - " << numFloor << ") or 0 to cancel: ";
-    cin >> floorNum;
-    if(floorNum != 0){
-        checkIn(roomTypeCode, floorNum);
+    if(isAvailable = false){
+        cout << "There are no room of your preference on this floor. Please choose another floor (1 - " << numFloor << ") or 0 to cancel: ";
+        cin >> floorNum;
+        if(floorNum != 0){
+            checkIn(roomTypeCode, floorNum);
+        }
     }
 }
+
+int
