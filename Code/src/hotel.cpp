@@ -6,37 +6,19 @@ using namespace std;
 
 hotel::hotel(){
     int checkInNum = 0;
-    int hotel[2][2][2] = {0,0,0,0,0,0};
-    string answer;
-}
-
-bool isEmptyCheck(int numFloor, int regRooms){
-    for(int floor = 0; floor < numFloor; floor++){
-        for(int num = 0; num < 2; num++){
-            for(int rooms = 0; rooms < regRooms; rooms++){
-                if(int hotel[floor][num][rooms] != 0)
-                    return false;
-            }
-        }
-    }return true
 }
 
 //Admin Setting---------------------------------------------------------------------------------------------
-void hotel::chgSetting(int numFloor, int regRooms){
-    if(isEmptyCheck(numFloor, regRooms)){
-        int hotel[numFloor][2][regRooms];
-        for(int floor = 0; floor < numFloor; floor++){
-            for(int num = 0; num < 2; num++){
-                for(int rooms = 0; rooms < regRooms; rooms++){
-                    int hotel[floor][num][rooms] = 0;
-                }
-            }
-        }
-    }else{
-        cout << "There are customers still staying at the hotel. Are you sure you want to edit? (y/n) ";
-        cin >> answer;
-        if(answer == 'y'){
-            chgSetting(numFloor, regRooms, splRooms);
+void hotel::chgSetting(int numFloor, int totalRooms){
+    numFloor = numFloor;
+    hotelLayout = new int*[numFloor];
+    for (int i = 0; i < numFloor; i++)
+        hotelLayout[i] = new int[totalRooms];
+
+    for(int floor = 0; floor < numFloor; floor++){
+        for(int room = 0; room < totalRooms; room++){
+            hotelLayout[floor][room] = 0;
+            rooms = totalRooms/2;
         }
     }
 }
@@ -55,65 +37,64 @@ void timeTick(){
 
 //Customer Setting------------------------------------------------------------------------------------------
 void hotel::checkIn(int roomTypeCode, int floorNum, int timeStay){
-    if(checkInNum < 4){
-        bool isAvailable = false;
-        for(int num = 0; nim < regRooms; num++){
-            if(hotel[floorNum][roomTypeCode][num] == 0){
-                cout << "Thank you for the reservation. Your code is " << floorNum << ", " << roomTypeCode << ", and " << num << endl;
-                hotel[floorNum][roomTypeCode][num] = timeStay;
-                isAvailable = true;
-            }
+    int startNum = 0;
+    if(roomTypeCode == 1)
+        startNum = rooms;
+    int isAvailable = false;
+    for(int num = startNum; num < (rooms + startNum); num++){
+        if(hotelLayout[floorNum][num] == 0){
+            cout << "Thank you for the reservation. Your code is " << floorNum << " and " << num << endl;
+            hotelLayout[floorNum][num] = timeStay;
+            isAvailable = true;
+            checkInNum += 1;
+            break;
         }
-        if(isAvailable = false){
-            cout << "There are no room of your preference on this floor. Please choose another floor (1 - " << numFloor << ") or 0 to cancel: ";
-            cin >> floorNum;
-            if(floorNum != 0){
-                checkIn(roomTypeCode, floorNum);
-            }
+    }
+    if(isAvailable == false){
+        cout << "There are no room of your preference on this floor. Please choose another floor or 0 to cancel: ";
+        cin >> floorNum;
+        if(floorNum != 0){
+            checkIn(roomTypeCode, floorNum, timeStay);
         }
-        checkInNum += 1
-    }else{
-        cout << "The day is over. No more check in for the day.\n" << endl;
-        timeTick();
     }
 }
 
-void hotel::changeRoom(int floorNum1, int roomTypeCode1, int num1, int floorNum2, int roomTypeCode2, int num2){
-    if(hotel[floorNum1][roomTypeCode1][num1] != 0){
+void hotel::changeRoom(int floorNum1, int num1, int floorNum2, int num2){
+    if(hotelLayout[floorNum1][num1] != 0){
         cout << "Are you sure you want to change rooms? (y/n) ";
         cin >> answer;
         if(answer == 'y'){
-            cout << "Your new code is " << floorNum2 << ", " << roomTypeCode2 << ", and " << num2 << endl;
-            hotel[floorNum2][roomTypeCode2][num2] = hotel[floorNum1][roomTypeCode1][num1];
-            hotel[floorNum1][roomTypeCode1][num1] = 0;
+            cout << "Your new code is " << floorNum2 << " and " << num2 << endl;
+            hotelLayout[floorNum2][num2] = hotelLayout[floorNum1][num1];
+            hotelLayout[floorNum1][num1] = 0;
         }
     }else{
-        cout << "The code you entered is invaild. Your transaction is cancelled" << endl;
+        cout << "The code you entered is invalid. Your transaction is canceled" << endl;
     }
 }
 
-void hotel::changeTime(int floorNum, int roomTypeCode, int num, int addTimeStay){
-    if(hotel[floorNum1][roomTypeCode1][num1] != 0){
+void hotel::changeTime(int floorNum, int num, int addTimeStay){
+    if(hotelLayout[floorNum][num] != 0){
         cout << "Are you sure you want to stay longer? (y/n) ";
         cin >> answer;
         if(answer == 'y'){
-            hotel[floorNum][roomTypeCode][num] += addTimeStay;
+            hotelLayout[floorNum][num] += addTimeStay;
             cout << "Thank you for your stay at our hotel." << endl;
         }
     }else{
-        cout << "The code you entered is invaild. Your transaction is cancelled" << endl;
+        cout << "The code you entered is invalid. Your transaction is canceled" << endl;
     }
 }
 
-void hotel::checkOut(int floorNum, int roomTypeCode, int num){
-    if(hotel[floorNum1][roomTypeCode1][num1] != 0){
+void hotel::checkOut(int floorNum, int num){
+    if(hotelLayout[floorNum][num] != 0){
         cout << "Are you sure you want to check out now? (y/n) ";
         cin >> answer;
         if(answer == 'y'){
-            hotel[floorNum][roomTypeCode][num] = 0;
+            hotelLayout[floorNum][num] = 0;
             cout << "Thank you for your stay at our hotel." << endl;
         }
     }else{
-        cout << "The code you entered is invaild. Your transaction is cancelled" << endl;
+        cout << "The code you entered is invalid. Your transaction is canceled" << endl;
     }
 }
