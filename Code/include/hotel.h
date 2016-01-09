@@ -5,9 +5,9 @@ using namespace std;
 
 class hotel{
     public:
-        int rooms;
+        int roomTypeNum;
         char answer;
-        int numFloor;
+        int numFloorGb;
         int checkInNum;
         int** hotelLayout;
 
