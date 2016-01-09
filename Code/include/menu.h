@@ -1,13 +1,13 @@
 #ifndef MENU_H
 #define MENU_H
 
-class menu
-{
+class menu{
+    int answer;
     public:
         menu();
         int display();
-        int checkIn(int numFloor);
-        int enterCode();
+        int* checkIn(int numFloor);
+        int* enterCode();
         int editDisplay();
 };
 
