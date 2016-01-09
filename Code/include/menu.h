@@ -9,5 +9,6 @@ class menu
         int checkIn(int numFloor);
         int enterCode();
         int editDisplay()
+};
 
 #endif // MENU_H
