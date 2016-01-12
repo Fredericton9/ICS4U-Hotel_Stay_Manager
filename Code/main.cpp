@@ -6,7 +6,7 @@
 
 using namespace std;
 
-int main{
+int main(){
     int adminPass, numFloor, totalRooms, passTry, editType, addDays;
     int info[3], code1[2], code2[2];
     char dayConfirm;
