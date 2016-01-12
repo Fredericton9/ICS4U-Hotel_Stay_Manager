@@ -8,7 +8,7 @@ using namespace std;
 
 int main(){
     int adminPass, numFloor, totalRooms, passTry, editType, addDays;
-    int info[3], code1[2], code2[2];
+    int *info, *code1, *code2;
     char dayConfirm;
     
     //Admin is prompted for a password before pass.
