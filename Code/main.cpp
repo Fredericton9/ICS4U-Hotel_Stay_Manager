@@ -4,10 +4,10 @@
 #include <string>
 #include <iostream>
 
-std namespace;
+using namespace std;
 
 int main{
-    int adminPass, numFloor, totalRooms;
+    int adminPass, numFloor, totalRooms, passTry;
     char dayConfirm;
     
     //Admin is prompted for a password before pass.
@@ -33,8 +33,16 @@ int main{
     while(dayConfirm == "y"){
         int currentDisplay = menuObj.display();
         if (currentDisplay == 1){
-            cout << "Please enter the administrative password in order to change your settings. ";
-            
+            bool wrongPw = true;
+            while(wrongPw){
+                cout << "Please enter the administrative password in order to change your settings or 0 to cancel transaction. ";
+                cin >> passTry;
+                if(passTry == adminPass){
+                    wrongPw = false;
+                }else{
+                    cout << "Wrong password!!!" << endl;
+                }
+            }
         }
     }
 }
