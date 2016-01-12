@@ -32,7 +32,9 @@ int main{
     cin >> dayConfirm;
     
     while(dayConfirm == "y"){
+        //Initialized the display for the menu.
         int currentDisplay = menuObj.display();
+        //The case for display #1
         if (currentDisplay == 1){
             bool wrongPw = true;
             while(wrongPw){
@@ -54,13 +56,16 @@ int main{
                     cout << "Wrong password!!!" << endl;
                 }
             }
+        //The case for display #2.
         }if (currentDisplay == 2){
             info = menuObj.checkIn(numFloor);
             hotelObj.checkIn(info[0],info[1],info[2]);
+        //The case for display #3
         }if (currentDisplay == 3){
             editType = menuObj.editDisplay();
             cout << "Enter your code" << endl;
             code1 = menuObj.enterCode();
+            //Depending on the editing type, the client can change their variables.
             if (editType == 1){
                 code2 = menuObj.enterCode();
                 hotelObj.changeRoom(code1[0],code1[1],code2[0],code2[1]);
