@@ -74,7 +74,7 @@ int main(){
                 cin >> addDays;
                 hotelObj.changeTime(code1[0],code1[1],addDays);
             }if (editType == 3){
-                hotelObj.checkout(code1[0],code1[1]);
+                hotelObj.checkOut(code1[0],code1[1]);
             }
         }
     }
