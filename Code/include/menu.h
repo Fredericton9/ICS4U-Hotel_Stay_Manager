@@ -2,10 +2,12 @@
 #define MENU_H
 
 class menu{
-    int answer;
     public:
+        int answer;
+
         menu();
         int display();
+        int adminDisplay();
         int* checkIn(int numFloor);
         int* enterCode();
         int editDisplay();
