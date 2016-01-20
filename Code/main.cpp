@@ -14,7 +14,6 @@ int main(){
     bool isFull = false;
     int *info, *code;
     char dayConfirm; // day starting command
-    char test;
     int days = 0; // time simulator
 
     //Administrator is prompted for a password before pass.
@@ -39,14 +38,15 @@ int main(){
     cout << "\n\n\nWould you like to start the day? (y/n) ";
     cin >> dayConfirm;
 
-    maxCheckInNum = rand() % 3 + 4;
+    maxCheckInNum = rand() % 4 + 2;
+    cout << maxCheckInNum << endl;
     while(dayConfirm == 'y'){
         isFull = hotelObj.isFull(); // Check if the hotel is full
         //Initialized the display for the menu.
         if(isFull){
             cout << "The hotel is full. Please type 0 to continue. ";
             cin >> displayChoice;
-            maxCheckInNum = rand() % 3 + 3; // check in of 3 to 6 customers per day
+            maxCheckInNum = rand() % 4 + 2; // check in of 3 to 6 customers per day
             hotelObj.timeTick();
             days += 1; // 1 day has passed
             Sleep(1000);
@@ -88,7 +88,8 @@ int main(){
                 info = menuObj.checkIn(numFloor);
                 checkInNum = hotelObj.checkIn(info[0],info[1],info[2]);
                 if(checkInNum == maxCheckInNum){
-                    maxCheckInNum = rand() % 3 + 3; // check in of 3 to 6 customers per day
+                    maxCheckInNum = rand() % 4 + 2; // check in of 3 to 6 customers per day
+                    cout << maxCheckInNum << endl;
                     hotelObj.timeTick();
                     days += 1; // 1 day has passed
                     Sleep(1000);
@@ -117,5 +118,5 @@ int main(){
                 }
             }
         }
-    }
+    }hotelObj.hotelLayoutDisplay();
 }
