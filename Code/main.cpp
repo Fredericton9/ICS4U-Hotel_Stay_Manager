@@ -17,13 +17,13 @@ int main(){
     int days = 0; // time simulator
 
     //Administrator is prompted for a password before pass.
-    cout << "Good morning/afternoon/evening! Welcome to Hotel Management Assistant v1.0.0" << endl;
-    cout << "Please create the number password for administrative privileges: ";
+    cout << "Good morning/afternoon/evening! Welcome to the Hotel Management Assistant v1.0.0" << endl;
+    cout << "Please create a numeric password for future access to administrative privileges: ";
     cin >> adminPass;
     Sleep(1000);
 
     //Initialized the hotel layout variables, and plugs them into the first generated building.
-    cout << "\nBefore we start, we need the info; What are the current number of floors: ";
+    cout << "\nBefore we start, we need some info; What are the current number of floors: ";
     cin >> numFloor;
 
     cout << "What is the number of rooms of a type PER floor: ";
